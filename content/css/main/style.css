@@ -32,6 +32,7 @@ a {
 /* .................................................................................  */
 .course-container {
   margin: 0 15%;
+  min-height: 100vh;
 }
 
 .header {
@@ -97,7 +98,7 @@ a {
 }
 @media screen and (max-width: 992px) {
   .grades-container {
-    padding-top: 1.5rem;
+    padding-top: 0.8rem;
   }
 }
 
@@ -152,6 +153,11 @@ a {
     padding-top: 1.5rem;
   }
 }
+@media screen and (max-width: 992px) {
+  .select-term-container {
+    padding-top: 0.8rem;
+  }
+}
 
 .select-term {
   outline: 0.2rem solid #27374d;
@@ -186,10 +192,22 @@ a {
   background-color: #d6eaf8;
 }
 
+.final-course {
+  margin-bottom: 1.5rem;
+}
+@media screen and (max-width: 1201px) {
+  .final-course {
+    padding-top: 2.5rem;
+  }
+}
+@media screen and (max-width: 992px) {
+  .final-course {
+    padding-top: 0.8rem;
+  }
+}
 .final-course .btn {
   background-color: #ebf5fb;
   display: block;
-  margin-top: 3rem;
   text-align: center;
   font-size: 1.33rem;
   font-weight: bold;
