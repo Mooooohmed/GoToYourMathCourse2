@@ -72,6 +72,7 @@ a {
 .course-container {
   // border: 3px solid yellow;
   margin: 0 15%;
+    min-height: 100vh;
   // flex-grow: 1;
 }
 .header {
@@ -201,6 +202,7 @@ a {
   }
 }
 .final-course {
+  margin-bottom: 1.5rem;
     @media screen and (max-width: map-get($breakpoints, xl)) {
     padding-top: 2.5rem;
   }
