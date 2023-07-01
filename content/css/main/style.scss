@@ -127,7 +127,7 @@ a {
     padding-top: 1.5rem;
   }
   @media screen and (max-width: map-get($breakpoints, lg)) {
-    padding-top: 1.5rem;
+    padding-top: 0.8rem;
   }
 }
 .grades-block {
@@ -172,6 +172,9 @@ a {
   @media screen and (max-width: map-get($breakpoints, xl)) {
     padding-top: 1.5rem;
   }
+    @media screen and (max-width: map-get($breakpoints, lg)) {
+    padding-top: 0.8rem;
+  }
 }
 .select-term {
   outline: 0.2rem solid map-get($color, blue-1);
@@ -198,11 +201,16 @@ a {
   }
 }
 .final-course {
+    @media screen and (max-width: map-get($breakpoints, xl)) {
+    padding-top: 2.5rem;
+  }
+  @media screen and (max-width: map-get($breakpoints, lg)) {
+    padding-top: 0.8rem;
+  }
   .btn {
     // border: 2px solid red;
     background-color: map-get($color, blue-3);
     display: block;
-    margin-top: 3rem;
     // width: fit-content;
     text-align: center;
     font-size: map-get($font, Large);
