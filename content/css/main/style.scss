@@ -259,7 +259,7 @@ a {
     font-weight: bold;
     text-align: center;
       @media screen and (max-width: map-get($breakpoints, sm)) {
-      padding-top: 1rem;
+      line-height: 1.2rem;
   }
   &__text--line {
     font-size: map-get($font, Medium);
