@@ -1,0 +1,287 @@
+/* .....................................variables.............................................  */
+$main-font: "Roboto", sans-serif;
+$color: (
+  blue-1: #27374d,
+  blue-2: #d6eaf8,
+  blue-3: #ebf5fb,
+  modalblue-4: rgba(#ebf5fb, 0.3),
+);
+$font: (
+  Large: 1.33rem,
+  Medium: 1.26rem,
+  Small: 1.08rem,
+);
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1201px,
+);
+/* .....................................variables.............................................  */
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-height: 100vh;
+  // position: relative;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-family: $main-font;
+  background: linear-gradient(
+    to bottom,
+    map-get($color, blue-3),
+    map-get($color, blue-1)
+  );
+  // background-image: radial-gradient(
+  //   map-get($color, blue-1),
+  //   map-get($color, blue-3)
+  // );
+}
+ul,
+ol,
+li {
+  list-style: none;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+/* ..................................mixin...............................................  */
+@mixin btnselector() {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.8rem;
+  text-align: start;
+  font-size: map-get($font, Small);
+  font-weight: bold;
+  border: none; //border: 5px solid lightpink;
+}
+@mixin menu() {
+  position: absolute;
+  display: none;
+  width: 100%;
+  top: 110%;
+}
+/* .................................................................................  */
+.course-container {
+  // border: 3px solid yellow;
+  margin: 0 15%;
+  // min-height: 100vh;
+  flex-grow: 1;
+}
+.header {
+  color: map-get($color, blue-1);
+  font-size: map-get($color, Large);
+  position: relative;
+  margin: 0rem 0 3.5rem 0;
+  padding-top: 2.4rem; // margin-top will make y-scroll because there is no div above h1
+  //  (empty div) will not fix the problem
+}
+.line-break::before {
+  position: absolute;
+  content: "";
+  border: 0.2rem solid map-get($color, blue-1);
+  padding: 0 8rem;
+  top: 110%;
+  left: 50%;
+  transform: translate(-50%, 15%);
+}
+.stages,
+.grades,
+.select-term {
+  position: relative;
+}
+// .........................................
+.stages {
+  outline: 0.2rem solid map-get($color, blue-1);
+  &__btn {
+    @include btnselector;
+    color: map-get($color, blue-1);
+    background-color: map-get($color, blue-3);
+  }
+  &__btn--defualt {
+    background-color: map-get($color, blue-2);
+  }
+  &__text {
+    font-size: map-get($font, Medium);
+    color: map-get($color, blue-1);
+  }
+  &__menu {
+    @include menu;
+    outline: 2px solid map-get($color, blue-2);
+    z-index: 1;
+  }
+  &__menu &__btn:hover {
+    background-color: map-get($color, blue-2);
+    // color: map-get($color, blue-1);
+  }
+}
+// ---------------------------------------------------------------------------------
+.grades-container {
+  @media screen and (max-width: map-get($breakpoints, xl)) {
+    padding-top: 1.5rem;
+  }
+  @media screen and (max-width: map-get($breakpoints, lg)) {
+    padding-top: 0.8rem;
+  }
+}
+.grades-block {
+  margin: 0 1rem;
+  @media screen and (max-width: map-get($breakpoints, xl)) {
+    margin: 0;
+  }
+}
+.grades {
+  outline: 0.2rem solid map-get($color, blue-1);
+  &__btn {
+    @include btnselector;
+    color: map-get($color, blue-1);
+    background-color: map-get($color, blue-3);
+  }
+  &__btn--defualt {
+    background-color: map-get($color, blue-2);
+  }
+  &__text {
+    font-size: map-get($font, Medium);
+    color: map-get($color, blue-1);
+  }
+  &__menu-prim,
+  &__menu-prep,
+  &__menu-sec {
+    @include menu;
+    outline: 2px solid map-get($color, blue-2);
+    z-index: 1;
+  }
+  &__menu-prim {
+    height: 150px;
+    overflow-y: scroll;
+  }
+  &__menu-prim &__btn:hover,
+  &__menu-prep &__btn:hover,
+  &__menu-sec &__btn:hover {
+    background-color: map-get($color, blue-2);
+  }
+}
+// ---------------------------------------------------------------------------------
+.select-term-container {
+  @media screen and (max-width: map-get($breakpoints, xl)) {
+    padding-top: 1.5rem;
+  }
+  @media screen and (max-width: map-get($breakpoints, lg)) {
+    padding-top: 0.8rem;
+  }
+}
+.select-term {
+  outline: 0.2rem solid map-get($color, blue-1);
+  &__btn {
+    @include btnselector();
+    color: map-get($color, blue-1);
+    background-color: map-get($color, blue-3);
+  }
+  &__btn--defualt {
+    background-color: map-get($color, blue-2);
+  }
+  &__text {
+    font-size: map-get($font, Medium);
+    color: map-get($color, blue-1);
+  }
+  &__menu {
+    @include menu();
+    outline: 2px solid map-get($color, blue-2);
+    z-index: 1;
+  }
+  &__menu &__btn:hover {
+    background-color: map-get($color, blue-2);
+    // color: map-get($color, blue-1);
+  }
+}
+.final-course {
+  margin: 1.7rem 0;
+  padding-top: 2.5rem;
+  .btn {
+    // border: 2px solid red;
+    background-color: map-get($color, blue-3);
+    display: block;
+    // width: fit-content;
+    text-align: center;
+    font-size: map-get($font, Large);
+    font-weight: bold;
+    color: map-get($color, blue-1);
+    // border: 2px solid lightpink;
+    box-shadow: 0.35rem 0.35rem map-get($color, blue-1);
+    &:hover {
+      background-color: map-get($color, blue-2);
+    }
+    &:active {
+      color: black;
+    }
+  }
+}
+.modal-groud {
+  background-color: map-get($color, modalblue-4);
+}
+.model-bt-auto {
+  margin: 0 auto;
+}
+// --------------------------------------------------------------
+.active {
+  display: block !important;
+}
+.fade {
+  opacity: 0.5 !important;
+  transform: scale(0.981);
+}
+.footer {
+  margin: 0;
+  flex-shrink: 1;
+  // border: 3px solid red;
+  // position: absolute;
+  // bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: map-get($color, blue-3);
+  padding: 0.3rem 0;
+  // line-height: 0.3rem;
+  &__designed {
+    // border: 3px solid yellow;
+    line-height: 0.7rem;
+  }
+  &__text {
+    padding-top: 0.4rem;
+    font-size: map-get($font, Small);
+    color: map-get($color, blue-1);
+    font-weight: bold;
+    text-align: center;
+    @media screen and (max-width: map-get($breakpoints, sm)) {
+      line-height: 1.2rem;
+      font-size: 0.89rem;
+    }
+  }
+  &__text--line {
+    font-size: map-get($font, Medium);
+    text-decoration: underline;
+    color: map-get($color, blue-1);
+    @media screen and (max-width: map-get($breakpoints, sm)) {
+      font-size: map-get($font, Small);
+    }
+  }
+  &__supervision {
+    // border: 3px solid dodgerblue;
+    border-left: 0.2rem solid #27374d;
+    line-height: 0.7rem;
+  }
+}
+@media screen and (max-width: map-get($breakpoints, sm)) {
+  .footer__text--nam1 {
+    text-align: start;
+  }
+  .footer__text--nam2 {
+    text-align: end;
+  }
+}
