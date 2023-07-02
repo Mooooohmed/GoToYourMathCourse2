@@ -248,6 +248,10 @@ a {
   font-weight: bold;
   text-align: center;
 }
+@media screen and (max-width: 576px) {
+  .footer__text {
+    padding-top: 1rem;
+  }
 .footer__text--line {
   font-size: 1.26rem;
   text-decoration: underline;
