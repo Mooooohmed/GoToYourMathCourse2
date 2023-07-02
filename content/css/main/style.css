@@ -250,7 +250,7 @@ a {
 }
 @media screen and (max-width: 576px) {
   .footer__text {
-    padding-top: 1rem;
+   line-height: 1.2rem;
   }
 .footer__text--line {
   font-size: 1.26rem;
