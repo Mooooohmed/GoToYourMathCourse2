@@ -258,6 +258,8 @@ a {
     color: map-get($color, blue-1);
     font-weight: bold;
     text-align: center;
+      @media screen and (max-width: map-get($breakpoints, sm)) {
+      padding-top: 1rem;
   }
   &__text--line {
     font-size: map-get($font, Medium);
@@ -268,11 +270,7 @@ a {
     // border: 3px solid dodgerblue;
     border-left: 0.2rem solid #27374d;
     line-height: 0.7rem;
+    }
   }
-  // &__footer__names {
-  //   display: flex;
-  //   @media screen and (max-width: map-get($breakpoints, lg)) {
-  //     display: none;
-  //   }
-  // }
+
 }
